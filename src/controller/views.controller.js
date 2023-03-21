@@ -3,6 +3,8 @@ const Product = new ProductManager('./assets/product.json');
 const { emitDeleteProduct } = require("../utils/soket.io");
 const { emitaddRealtime } = require("../utils/soket.io");
 
+
+//views Home
 const views = async (req, res) => {
     let products = await Product.getProducts();
     res.render("home",{
@@ -10,9 +12,24 @@ const views = async (req, res) => {
 } );       
 }
 
+//views RealTimeProducts
+
 const RealTimeProduct = async (req, res) =>{
     res.render('realTimeProducts')
 }
+
+const renderChats =(req, res)=>{
+  res.render('chats')
+}
+
+const userLogin = (req , res) =>{
+  res.render('login')
+}
+
+const register = (req ,res) =>{
+  res.render('register')
+}
+
 
 const deleteRealTimeProduct = async (req, res) =>{
   const id = +req.params.pid 
@@ -36,9 +53,9 @@ const addRealTimeProduct = async (req, res)=>{
     }
 }
 
-const renderChats =(req, res)=>{
-    res.render('chats')
-}
+
+
+
 
 
 module.exports ={
@@ -46,5 +63,7 @@ module.exports ={
     RealTimeProduct,
     deleteRealTimeProduct,
     addRealTimeProduct,
-    renderChats
+    renderChats,
+    userLogin,
+    register
 }
