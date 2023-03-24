@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const chatsSchema = new mongoose.Schema({
 	userEmail: {
 		type: String,
-		require: true,
+		required: true,
 	},
 	message: {
 		type: String,
-		require: true,
+		required: true,
 	},
 } , {
     versionKey: false,

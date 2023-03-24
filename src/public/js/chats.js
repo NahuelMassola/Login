@@ -3,10 +3,10 @@ const socket = io()
 const listChatsElement = document.getElementById('list-chats')
 listChatsElement.innerHTML ="" 
 socket.on('init-chats', ( chats ) => {
-    chats.forEach((chat) => {
-    listChatsElement.innerHTML += `
+   chats.forEach((chat) => {
+   listChatsElement.innerHTML += `
 	 	  <li id=${chat._id} >${chat.userEmail} - ${chat.message}</li></br>
-	 	 `
+	 	`
 	})
 })
 

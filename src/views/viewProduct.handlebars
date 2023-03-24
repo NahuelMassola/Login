@@ -1,3 +1,13 @@
+
+  <h1>Perfil de usuario</h1>
+  <p>ingresaste como {{user.firstName}}  {{users.lastName}}</p>
+
+    <form action="/api/session/logout" method="get">
+    <br />
+      <button type="submit">logout</button>
+    </form>
+
+
 <main id = "main" class="container mt-5">
     <div class="row d-flex d-flex justify-content-between">
         
@@ -10,7 +20,7 @@
                 <h2 class="card-text text-center ">$ {{price}}</h2>
                 <p class="card-text text-center ">Cantidad: {{stock}}</p>
                 <div class="d-flex justify-content-center"> 
-                <button type="button" id="agregar" class="btn btn-primary">Agregar</button> 
+                <button type="button" id="agregar" onclick="addProductToCart('{{id}}, {{../cartId}}')" class="btn btn-primary">Agregar</button> 
             </div>
             </div>
             </div>

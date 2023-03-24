@@ -12,3 +12,9 @@ buttonPrev.addEventListener('click', () => {
    window.location.replace(`/products/?page=${parseInt(page)-1}`)
 });
 
+
+const addProductToCart = async (productId , cartId) => {
+   debugger
+   await fetch ("api/cartsBd/" + cartId + "/product/" + productId , { method: "PUT"});
+   alert("Producto Agregado al Carrito")
+}
