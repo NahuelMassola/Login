@@ -1,14 +1,15 @@
 
-  <h1>Perfil de usuario</h1>
-  <p>ingresaste como {{user.firstName}}  {{users.lastName}}</p>
-
-    <form action="/api/session/logout" method="get">
-    <br />
-      <button type="submit">logout</button>
-    </form>
-
-
-<main id = "main" class="container mt-5">
+<main id = "main" class="container mt-5 mb-5">
+    <div class="text-end">
+        <button id="logout">Cerrar Session</button>
+    </div>
+    <div class="text-center mb-5">
+        <h3>BIENVENIDO {{#with sessions}}
+            {{firstName}} {{lastName}} 
+            {{/with}}
+        </h3>
+    </div> 
+    
     <div class="row d-flex d-flex justify-content-between">
         
         {{#each products}}
@@ -26,8 +27,7 @@
             </div>
             {{/each}}
     </div>
-</main>
-<div class="d-flex justify-content-center ">
+<div class="d-flex justify-content-center mb-5">
             {{#if prev}}
             <button id="prev" >Anterior</button>
             {{else}}
@@ -40,7 +40,11 @@
             <button  id="next" disabled >Siguiente</button>
             {{/if}}
 </div>
-            
+</main>
+
+
 <script src="/js/paginate.js"></script>
+<script src="/js/logout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
