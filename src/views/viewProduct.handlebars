@@ -4,10 +4,10 @@
         <button id="logout">Cerrar Session</button>
     </div>
     <div class="text-center mb-5">
-        <h3>BIENVENIDO {{#with sessions}}
-            {{firstName}} {{lastName}} 
-            {{/with}}
+        <h3>BIENVENIDO 
+            {{this.firstName}} {{this.lastName}} 
         </h3>
+        <h5>ingresaste como {{this.rol}}</h5>
     </div> 
     
     <div class="row d-flex d-flex justify-content-between">

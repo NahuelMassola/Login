@@ -3,7 +3,7 @@ const userModel = require('../models/user.model');
 class BdSessionManager {
     
     getsession = async (email , password) =>{
-        return await userModel.findOne({email ,password });
+        return await userModel.findOne({email  });
     }
 
     createSession = async (user ) => {
